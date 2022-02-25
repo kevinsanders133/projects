@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="./js/main.js" defer></script>
+  <script src="./js/slider.js" defer></script>
+  <script src="./js/weather.js" defer></script>
+  <script src="./js/quotes.js" defer></script>
+  <script src="./js/player.js" defer></script>
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <div class="player-controls">
+        <div class="player-main-buttons">
+          <button class="play-prev player-icon"></button>
+          <button class="play player-icon"></button>
+          <button class="play-next player-icon"></button>
+        </div>
+
+        <div class="timeline">
+          <div class="progress-container">
+            <span class="track-name"></span>
+            <input type="range" min="0" max="100" value="0" class="progress">
+          </div>
+          <div class="player-time">
+            <div class="current"></div>
+            <div class="divider">/</div>
+            <div class="length"></div>
+          </div>
+        </div>
+        <div class="volume-container">
+          <div class="volume-button"></div>
+          <div class="volume-progress">
+            <input type="range" min="0" max="100" value="40">
+          </div>
+        </div>
+      </div>
+      <ul class="play-list"></ul>
+    </div>
+
+    <div class="header-right-container">
+      <div class="settings-container">
+        <button class="settings-button"></button>
+
+        <div class="settings">
+          <div class="settings-language">
+            <label>English <input type="radio" name="language" value="en" onchange="langChange(this)" checked></label>
+            <label>Русский <input type="radio" name="language" onchange="langChange(this)" value="ru"></label>
+          </div>
+          <div class="settings-background">
+            <label>Github <input type="radio" name="background" onchange="bgCollChange(this)" value="Github" checked></label>
+            <label>Unsplash <input type="radio" name="background" onchange="bgCollChange(this)" value="Unsplash"></label>
+            <label>Flickr <input type="radio" name="background" onchange="bgCollChange(this)" value="Flickr"></label>
+          </div>
+          <button class="settings-weather show-hide-btn">Show/hide weather</button>
+          <button class="settings-greeting show-hide-btn">Show/hide greeting</button>
+          <button class="settings-player show-hide-btn">Show/hide audio player</button>
+          <button class="settings-quotes show-hide-btn">Show/hide quotes</button>
+          <button class="settings-date show-hide-btn">Show/hide date</button>
+          <button class="settings-time show-hide-btn">Show/hide time</button>
+        </div>
+      </div>
+
+      <div class="weather">
+        <input type="text" class="city" />
+        <i class="weather-icon owf"></i>
+        <div class="weather-error"></div>
+        <div class="description-container">
+          <span class="temperature"></span>
+          <span class="weather-description"></span>
+        </div>
+        <div class="wind"></div>
+        <div class="humidity"></div>
+      </div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="quote-container">
+      <button class="change-quote"></button>
+      <div>
+        <div class="quote"></div>
+        <div class="author"></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
